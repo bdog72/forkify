@@ -1,4 +1,5 @@
 import Search from "./models/Search";
+import Recipe from "./models/Recipe";
 import * as searchView from "./views/searchView";
 import { elements, renderLoader, clearLoader } from "./views/base";
 
@@ -11,6 +12,8 @@ import { elements, renderLoader, clearLoader } from "./views/base";
 
 //  eslint-disable-next-line
 const state = {};
+
+// Search Controller
 
 const controlSearch = async () => {
 	// 1) Get query from view
@@ -51,3 +54,11 @@ elements.searchResPages.addEventListener("click", e => {
 		searchView.renderResults(state.search.result, goToPage);
 	}
 });
+
+// Recipe Controller
+
+const r = new Recipe(35478);
+r.getRecipe();
+
+// eslint-disable-next-line
+console.log(r);
